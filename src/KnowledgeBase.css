@@ -1,0 +1,47 @@
+/* Knowledge Base workspace */
+.knowledge-workspace { min-width: 0; }
+.kb-toolbar { display:flex; gap:12px; margin:20px 0; align-items:center; }
+.kb-toolbar input { flex:1; min-width:180px; }
+.kb-toolbar input, .kb-toolbar select, .kb-editor input, .kb-editor select, .kb-editor textarea { border:1px solid #d8e0ea; border-radius:9px; padding:11px 13px; background:#fff; color:#18283c; font:inherit; }
+.kb-toolbar select { min-width:180px; }
+.kb-editor, .kb-article-detail, .kb-drafts-section { background:#fff; border:1px solid #e3e9f0; border-radius:14px; padding:22px; margin:18px 0; }
+.kb-editor { display:grid; gap:14px; }
+.kb-editor-heading, .kb-drafts-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
+.kb-editor-heading h3, .kb-drafts-heading h3, .kb-article-detail h3 { margin:0 0 6px; color:#17283d; }
+.kb-editor-heading p, .kb-drafts-heading p { margin:0; color:#718096; font-size:13px; }
+.kb-editor label { display:grid; gap:7px; color:#34445a; font-size:13px; font-weight:600; }
+.kb-editor textarea { resize:vertical; min-height:160px; line-height:1.6; }
+.kb-editor-actions, .kb-card-actions { display:flex; gap:9px; flex-wrap:wrap; align-items:center; }
+.kb-editor-actions { justify-content:flex-end; }
+.kb-close, .kb-back { border:0; background:transparent; color:#176fc1; cursor:pointer; font:inherit; }
+.kb-close { font-size:25px; line-height:1; }
+.kb-article-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+.kb-article-card { display:flex; flex-direction:column; min-height:210px; padding:20px; border:1px solid #e3e9f0; border-radius:13px; background:#fff; }
+.kb-category, .kb-article-meta span { width:max-content; border-radius:30px; padding:5px 9px; background:#eaf3fc; color:#176fc1; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+.kb-article-card h3 { margin:14px 0 8px; color:#17283d; font-size:17px; }
+.kb-article-card p { margin:0 0 18px; color:#66758a; font-size:13px; line-height:1.6; white-space:pre-wrap; }
+.kb-card-footer { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:auto; }
+.kb-card-footer small, .kb-byline { color:#7a8798; font-size:12px; }
+.kb-card-footer button { border:0; background:transparent; color:#176fc1; font-weight:700; cursor:pointer; }
+.kb-empty { text-align:center; padding:48px 20px; background:#fff; border:1px dashed #d7e0eb; border-radius:14px; color:#738196; }
+.kb-empty h3 { margin:10px 0 6px; color:#25374d; }
+.kb-empty p { margin:0; font-size:13px; }
+.kb-empty-icon { font-size:30px; color:#176fc1; }
+.kb-article-detail { max-width:900px; }
+.kb-back { margin-bottom:20px; padding:0; }
+.kb-article-meta { display:flex; gap:8px; margin-bottom:14px; }
+.kb-article-detail h3 { font-size:25px; }
+.kb-article-content { margin:24px 0; color:#34445a; line-height:1.8; white-space:pre-wrap; overflow-wrap:anywhere; }
+.kb-article-detail .kb-card-actions { border-top:1px solid #edf0f4; padding-top:16px; }
+.kb-danger { border:1px solid #f0c9c9; color:#b42318; background:#fff; border-radius:8px; padding:9px 12px; cursor:pointer; }
+.kb-danger:disabled, .kb-card-actions button:disabled { opacity:.55; cursor:not-allowed; }
+.kb-drafts-section { margin-top:28px; }
+.kb-drafts-heading { align-items:center; margin-bottom:12px; }
+.kb-drafts-heading span { min-width:28px; text-align:center; padding:5px 8px; border-radius:20px; background:#f0f3f7; color:#45566d; font-size:12px; font-weight:700; }
+.kb-no-drafts { color:#77869a; font-size:13px; }
+.kb-draft-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0; border-top:1px solid #edf0f4; }
+.kb-draft-row > div:first-child { display:grid; gap:5px; }
+.kb-draft-row strong { color:#25374d; font-size:14px; }
+.kb-draft-row small { color:#7a8798; font-size:12px; }
+.kb-draft-row .kb-card-actions { justify-content:flex-end; }
+@media (max-width:700px) { .kb-toolbar { flex-direction:column; align-items:stretch; } .kb-toolbar input, .kb-toolbar select { width:100%; box-sizing:border-box; } .kb-draft-row { align-items:flex-start; flex-direction:column; } .kb-draft-row .kb-card-actions { justify-content:flex-start; } .kb-editor, .kb-article-detail, .kb-drafts-section { padding:16px; } }

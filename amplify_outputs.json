@@ -1,9 +1,9 @@
 {
   "auth": {
-    "user_pool_id": "eu-west-1_7Um4pwF0w",
+    "user_pool_id": "eu-west-1_sHns8wUd3",
     "aws_region": "eu-west-1",
-    "user_pool_client_id": "5jb0vsaqhteicd90ccmln22iij",
-    "identity_pool_id": "eu-west-1:4dbbd1bd-ec03-4590-885a-6fe2120d7923",
+    "user_pool_client_id": "1gaph4malvl8f8jq10idpqdeol",
+    "identity_pool_id": "eu-west-1:98cfb349-e18c-46af-8cba-119a739e5468",
     "mfa_methods": [],
     "standard_required_attributes": [
       "email"
@@ -37,7 +37,7 @@
     "unauthenticated_identities_enabled": true
   },
   "data": {
-    "url": "https://rni2dnve2zd2noezqcsbidz63y.appsync-api.eu-west-1.amazonaws.com/graphql",
+    "url": "https://renm3vw3ljeujngrwkzvp4q4h4.appsync-api.eu-west-1.amazonaws.com/graphql",
     "aws_region": "eu-west-1",
     "default_authorization_type": "AMAZON_COGNITO_USER_POOLS",
     "authorization_types": [
@@ -260,6 +260,97 @@
               "properties": {
                 "rules": [
                   {
+                    "groupClaim": "cognito:groups",
+                    "provider": "userPools",
+                    "allow": "groups",
+                    "groups": [
+                      "TECHNICIANS",
+                      "ADMINS"
+                    ],
+                    "operations": [
+                      "create",
+                      "update",
+                      "delete",
+                      "read"
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "primaryKeyInfo": {
+            "isCustomPrimaryKey": false,
+            "primaryKeyFieldName": "id",
+            "sortKeyFieldNames": []
+          }
+        },
+        "PublishedKnowledgeArticle": {
+          "name": "PublishedKnowledgeArticle",
+          "fields": {
+            "id": {
+              "name": "id",
+              "isArray": false,
+              "type": "ID",
+              "isRequired": true,
+              "attributes": []
+            },
+            "title": {
+              "name": "title",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "category": {
+              "name": "category",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "content": {
+              "name": "content",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
+            "author": {
+              "name": "author",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false,
+              "attributes": []
+            },
+            "createdAt": {
+              "name": "createdAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            },
+            "updatedAt": {
+              "name": "updatedAt",
+              "isArray": false,
+              "type": "AWSDateTime",
+              "isRequired": false,
+              "attributes": [],
+              "isReadOnly": true
+            }
+          },
+          "syncable": true,
+          "pluralName": "PublishedKnowledgeArticles",
+          "attributes": [
+            {
+              "type": "model",
+              "properties": {}
+            },
+            {
+              "type": "auth",
+              "properties": {
+                "rules": [
+                  {
                     "allow": "private",
                     "operations": [
                       "read"
@@ -322,7 +413,23 @@
           ]
         }
       },
-      "nonModels": {}
+      "nonModels": {},
+      "queries": {
+        "askCloudDeskAI": {
+          "name": "askCloudDeskAI",
+          "isArray": false,
+          "type": "String",
+          "isRequired": false,
+          "arguments": {
+            "message": {
+              "name": "message",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            }
+          }
+        }
+      }
     }
   },
   "version": "1.5"
